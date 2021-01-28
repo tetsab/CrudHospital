@@ -1,3 +1,13 @@
+<?php
+
+// use DomainException;
+// use Zend\Filter\StringTrim;
+// use Zend\Filter\StripTags;
+// use Zend\Filter\ToInt;
+// use Zend\InputFilter\InputFilter;
+// use Zend\InputFilter\InputFilterAwareInterface;
+// use Zend\InputFilter\InputFilterInterface;
+// use Zend\Validator\StringLength;
 class Hospital
 {
     public $id;
@@ -6,6 +16,8 @@ class Hospital
     public $bairro;
     public $cep;
     public $telefone;
+
+    private $inputFilter;
 
     public function exchangeArray(array $data)
     {
@@ -16,5 +28,6 @@ class Hospital
         $this->cep       = !empty($data['cep'])      ? $data['cep']      : null;
         $this->telefone  = !empty($data['telefone']) ? $data['telefone'] : null;
     }
-}
 
+    //public function setInputFilter()
+}

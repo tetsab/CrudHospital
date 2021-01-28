@@ -1,13 +1,9 @@
-<php
+<?php
 namespace Hospital;
 
 use Zend\Router\Http\Segment;
 
 return [
-    
-    ],
-
-
     'router' => [
         'routes' => [
             'hospital' => [
@@ -33,5 +29,3 @@ return [
         ],
     ],
 ];
-
-?>

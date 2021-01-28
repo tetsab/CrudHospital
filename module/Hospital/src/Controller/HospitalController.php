@@ -1,12 +1,16 @@
+<?php 
+
 namespace Hospital\Controller;
 
+use Hospital\Form\HospitalForm;
+use Hospital\MOdel\Hospital;
 use Hospital\Model\HospitalTable;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class HospitalController extends AbstractActionController
 {
-    private $stable;
+    private $table;
 
     public function __construct(HospitalTable $table)
     {
@@ -15,8 +19,8 @@ class HospitalController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewMode([
-            'hospitals' => $this.table->fetchAll(),
+        return new ViewModel([
+            'hospitals' => $this->table->fetchAll(),
         ]);
     }
 

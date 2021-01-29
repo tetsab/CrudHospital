@@ -5,11 +5,10 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application;
-
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Album\Controller\HospitalController;
+// use Zend\Router\Http\Literal;
+// use Zend\Router\Http\Segment;
+// use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
     'router' => [

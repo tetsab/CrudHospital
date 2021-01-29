@@ -3,7 +3,7 @@
 namespace Hospital\Controller;
 
 use Hospital\Form\HospitalForm;
-use Hospital\MOdel\Hospital;
+use Hospital\Model\Hospital;
 use Hospital\Model\HospitalTable;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -26,6 +26,26 @@ class HospitalController extends AbstractActionController
 
     public function addAction()
     {
+        $form = new HospitalForm();
+        $form->get('submit')->setValue('Add');
+
+        $request = $this->getRequest();
+
+        if(! $request->isPost()){
+            return ['form' => $form];
+        }
+
+        $hospital = new Hospital();
+        $form->setInputFilter($hospital->getInputFilter());
+        $form->setData($request->getPost());
+
+        if(! $form->isValid()){
+            return ['form' => $form];
+        }
+
+        $hospital->exangeArray($form->getData());
+        $this->table->saveHospital($hospital);
+        return $this->redirect()->toRoute('hospital');
 
     }
 

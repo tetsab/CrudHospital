@@ -14,6 +14,6 @@ INSERT INTO hospitais (nome, endereco, bairro, cep, telefone) VALUES ('Hospital 
 INSERT INTO hospitais (nome, endereco, bairro, cep, telefone) VALUES ('Hospital dos Rinocerontes', 'Rua das Peras', 'Inverno', 4234242, 3545345);
 INSERT INTO hospitais (nome, endereco, bairro, cep, telefone) VALUES ('Hospital dos Gatos', 'Rua dos Limões', 'Outono', 234242, 43534534);
 INSERT INTO hospitais (nome, endereco, bairro, cep, telefone) VALUES ('Hospital dos Elefantes', 'Rua das Bananas', 'Inverno', 4453453, 34534534);
-```
 
-sqlite data/hospitais.db < data/schema.sql
+
+-- sqlite data/hospitais.db < data/schema.sql

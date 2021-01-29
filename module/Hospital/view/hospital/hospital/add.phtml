@@ -1,0 +1,84 @@
+<?php
+$title = 'Adicionar novo registo de Hospital';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+
+$hospital = $form->get('title');
+$hospital->setAttribute('class', 'form-control');
+$hospital->setAttribute('placeholder', 'Hospital');
+
+$nome = $form->get('nome');
+$nome->setAttribute('class', 'form-control');
+$nome->setAttribute('placeholder', 'Nome');
+
+$endereco = $form->get('endereco');
+$endereco->setAttribute('class', 'form-control');
+$endereco->setAttribute('placeholder', 'Endereco');
+
+$bairro = $form->get('bairro');
+$bairro->setAttribute('class', 'form-control');
+$bairro->setAttribute('placeholder', 'Bairro');
+
+$cep = $form->get('cep');
+$cep->setAttribute('class', 'form-control');
+$cep->setAttribute('placeholder', 'Cep');
+
+$telefone = $form->get('cep');
+$telefone->setAttribute('class', 'form-control');
+$telefone->setAttribute('placeholder', 'Telefone');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('hospital', ['action' => 'add']));
+$form->prepare();
+
+
+echo $this->form()->openTag($form);
+?>
+
+<?php
+
+?>
+
+<div class="form-group">
+    <?= $this->formLabel($nome) ?>
+    <?= $this->formElement($nome) ?>
+    <?= $this->formElementErrors()->render($nome, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($endereco) ?>
+    <?= $this->formElement($endereco) ?>
+    <?= $this->formElementErrors()->render($endereco, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($bairro) ?>
+    <?= $this->formElement($bairro) ?>
+    <?= $this->formElementErrors()->render($bairro, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($cep) ?>
+    <?= $this->formElement($cep) ?>
+    <?= $this->formElementErrors()->render($cep, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($telefone) ?>
+    <?= $this->formElement($telefone) ?>
+    <?= $this->formElementErrors()->render($telefone, ['class' => 'help-block']) ?>
+</div>
+
+<?php
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('nome'));
+echo $this->formRow($form->get('endereco'));
+echo $this->formRow($form->get('bairro'));
+echo $this->formRow($form->get('cep'));
+echo $this->formRow($form->get('telefone'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
